@@ -14,10 +14,12 @@ app.use(cors());
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'postgres',
-      password : 'Adebayo7',
-      database : 'V-blog-database'
+      connectionString : process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      // host : '127.0.0.1',
+      // user : 'postgres',
+      // password : 'Adebayo7',
+      // database : 'V-blog-database'
     }
 });
 
